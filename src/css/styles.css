@@ -1,0 +1,189 @@
+@font-face {
+  font-family: WarpThruster;
+  src: url("../fonts/WarpThrusterEngravedRegular.otf");
+}
+
+:root {
+  --color-grid-black: black;
+  --color-grid-green: #61d6c3;
+  --color-grid-grey: grey;
+  --color-grid-orange: orange;
+  --color-grid-red: #cd6e63;
+  --color-grid-red-bright: red;
+  --color-grid-white: white;
+  --font-general: WarpThruster;
+}
+
+body {
+  user-select: none;
+  font-family: var(--font-general);
+
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-rows: 3rem fit-content 1fr 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+button {
+  font-family: var(--font-general);
+  font-size: 1.25rem;
+
+}
+
+button.focus {
+  border-color: var(--color-grid-red-bright);
+  border-style: dashed;
+}
+
+.header {
+  border-bottom-style: solid;
+  border-bottom-width: 0.25rem;
+  width: 100%;
+
+  font-size: 2rem;
+
+  display: grid;
+  place-content: center;
+}
+
+.instructions {
+  border-style: dashed;
+  border-width: 0.3rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 2rem 2rem 0 2rem;
+
+  font-size: 1.25rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.instructions .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.instructions.game-over {
+  border-color: var(--color-grid-red-bright);
+}
+
+.instructions .game-over {
+  color: var(--color-grid-red-bright);
+}
+
+.main {
+  margin: 2rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container {
+  border-style: dashed;
+  border-width: 0.3rem;
+  border-radius: 1rem;
+  padding: 0 2rem;
+
+  display: grid;
+  grid-template-rows: 2rem 1fr 2rem;
+}
+
+.container .player-text {
+  display: grid;
+  place-content: center;
+}
+
+.grid {
+  width: fit-content;
+  height: fit-content;
+
+  border-style: solid;
+  border-width: 0.25rem;
+
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.grid .grid-row {
+  width: fit-content;
+  height: fit-content;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.grid .square {
+  position: relative;
+
+  border-style: solid;
+  border-width: 0.05rem;
+
+  width: min(max(3vh, 6vw), 3rem);
+  aspect-ratio: 1/1;
+
+  display: grid;
+  place-content: center;
+}
+
+.grid .square img {
+  width: min(max(2vh, 5vw), 2rem);
+}
+
+.grid .square.ship-hover-not-placeable {
+  background-color: var(--color-grid-red);
+}
+
+.grid .square.ship-hover-placeable {
+  background-color: var(--color-grid-green);
+}
+
+.grid .square.ship-hover-shooting {
+  background-color: var(--color-grid-orange);
+}
+
+.grid .square.ship-placed {
+  background-color: var(--color-grid-grey);
+}
+
+.footer {
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  width: 100%;
+
+  font-size: 1.1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer a {
+  color: var(--color-grid-black);
+
+  display: grid;
+  place-content: center;
+
+  text-decoration: none;
+}
+
+.footer img {
+  height: 1.1rem;
+
+}
