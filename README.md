@@ -25,6 +25,6 @@ Battleship board game rules:
 5c - And if it's a hit, determine if the ship sunk.
 
 
-Using JS, Webpack
+Using Javascript, Webpack
 
 Testing using Jest
